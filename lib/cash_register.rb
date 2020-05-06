@@ -1,9 +1,7 @@
 require "pry"
 
 class CashRegister
-  attr_accessor :total, :discount
-  attr_reader :items
-
+  attr_accessor :total, :discount, :items
 
   def initialize(discount = 0)
     @discount = discount
@@ -20,7 +18,7 @@ class CashRegister
   end
 
   def apply_discount
-    return "There is no discount to apply." if discount == 0
+    return "There is no discount to apply." if discount.zero?
 
     percent = 1 - @discount.to_f / 100
     @total *= percent
