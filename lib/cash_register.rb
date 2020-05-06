@@ -2,7 +2,7 @@ require "pry"
 
 class CashRegister
   attr_accessor :total, :discount
-
+  attr_reader :items
 
 
   def initialize(discount = 0)
@@ -25,10 +25,6 @@ class CashRegister
     percent = 1 - @discount.to_f / 100
     @total *= percent
     "After the discount, the total comes to $#{@total.to_i}."
-  end
-
-  def items
-    @items
   end
 
   def void_last_transaction
