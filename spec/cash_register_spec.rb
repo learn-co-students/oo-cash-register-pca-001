@@ -1,3 +1,5 @@
+require "pry"
+
 describe 'CashRegister' do
   let(:cash_register) { CashRegister.new }
   let(:cash_register_with_discount) { CashRegister.new(20) }
@@ -88,4 +90,3 @@ describe 'CashRegister' do
     end
   end
 end
-
